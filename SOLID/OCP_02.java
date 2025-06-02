@@ -1,11 +1,11 @@
 package SOLID;
 
-// Step 1: Make Shape abstract and responsible for its own area
+// Step 1: Make Shape abstract with an area method
 public abstract class Shape {
     public abstract double getArea();
 }
 
-// Step 2: Implement shapes with their own area logic
+// Step 2: Implement concrete shapes
 public class Square extends Shape {
     private double side;
 
@@ -32,9 +32,9 @@ public class Circle extends Shape {
     }
 }
 
-// Step 3: AreaCalculator is closed for modification, open for extension
+// Step 3: Calculator now works for any shape without modification
 public class AreaCalculator {
-    public double calculateArea(Shape shape) {
+    public double getArea(Shape shape) {
         return shape.getArea();
     }
 }
