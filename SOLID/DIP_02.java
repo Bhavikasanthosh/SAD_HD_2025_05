@@ -2,7 +2,7 @@ package SOLID;
 
 public class DIP_02 {
 
-    // 1. Abstraction
+    
     public interface Notification {
         void doNotify();
     }
