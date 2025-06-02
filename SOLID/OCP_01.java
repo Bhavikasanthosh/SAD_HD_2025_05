@@ -47,8 +47,8 @@ public class OCP_01 {
 
     public static void main(String[] args) {
         DiscountCalculator calculator = new DiscountCalculator();
-        System.out.println("Regular Discount: " + calculator.calculateDiscount("Regular", 100.0));
-        System.out.println("Premium Discount: " + calculator.calculateDiscount("Premium", 100.0));
-        System.out.println("Gold Discount: " + calculator.calculateDiscount("Gold", 100.0));
+        System.out.println("Regular Discount: " + calculator.calculateDiscount("Regular", 200.0));
+        System.out.println("Premium Discount: " + calculator.calculateDiscount("Premium", 200.0));
+        System.out.println("Gold Discount: " + calculator.calculateDiscount("Gold", 200.0));
     }
 }

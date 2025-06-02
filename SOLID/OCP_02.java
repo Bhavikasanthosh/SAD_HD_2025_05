@@ -1,37 +1,40 @@
 package SOLID;
 
-public class OCP_02 {
+// Step 1: Make Shape abstract and responsible for its own area
+public abstract class Shape {
+    public abstract double getArea();
+}
 
-    /*
-     * TASK:
-     * (classical task)
-     * How to add other shapes without violating the OCP
-     * (Open/Closed Principle)?
-     * The interface/class/method bodies are empty by purpose
-     * and there is no main provided.
-     */
-    
-    public static abstract class Shape {
+// Step 2: Implement shapes with their own area logic
+public class Square extends Shape {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
     }
 
-    public static class Square extends Shape {
+    @Override
+    public double getArea() {
+        return side * side;
+    }
+}
+
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    public static class Circle extends Shape {
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
     }
+}
 
-    public static class AreaCalculator {
-        public double getArea(Shape shape) {
-            double areaOfShape = 0.0;
-            if (shape instanceof Square) {
-                // calculate the area of a Square
-                areaOfShape = 0.0;
-            }
-            else if (shape instanceof Circle) {
-                // calculate the area of a Circle
-                areaOfShape = 0.0;
-            }
-            return areaOfShape;
-        }
+// Step 3: AreaCalculator is closed for modification, open for extension
+public class AreaCalculator {
+    public double calculateArea(Shape shape) {
+        return shape.getArea();
     }
 }
