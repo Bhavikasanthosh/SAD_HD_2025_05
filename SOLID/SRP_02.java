@@ -27,14 +27,12 @@ public class SRP_02 {
         { this.salary = salary; }
     }
 
-    /** Handles salary updates only – its single responsibility. */
     public static final class SalaryService {
         public void updateSalary(Employee employee, double newSalary) {
             employee.setSalary(newSalary);
         }
     }
 
-    /** Sends mail – and nothing else – so SRP is satisfied. */
     public static final class MailService {
         public void sendMail(Employee employee, String message) {
             // stub implementation
