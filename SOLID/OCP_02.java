@@ -47,7 +47,7 @@ public class OCP_02 {
 
     public static final class AreaCalculator {
         public double getArea(Shape shape) {
-            return shape.area(); // Delegation obeys OCP
+            return shape.area(); 
         }
     }
 }
